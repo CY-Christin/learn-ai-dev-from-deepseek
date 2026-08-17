@@ -1,0 +1,148 @@
+[project]
+# site_url = "https://www.example.com/"
+site_name = "跟着 DeepSeek 学习驾驭 AI 开发"
+site_description = "拆解 DeepSeek 用 AI 开发代码库的方法论：管两端、放中间，从真实事故蒸馏出可借鉴的 AI 协作开发实践。"
+# site_author = "Your name"
+
+# copyright = "Copyright &copy; 2026 Your name"
+
+repo_url = "https://github.com/CY-Christin/learn-ai-dev-from-deepseek"
+repo_name = "CY-Christin/learn-ai-dev-from-deepseek"
+# edit_uri = "edit/main/docs/"
+
+nav = [
+  { "首页" = "README.md" },
+  { "跟着 DeepSeek 学习驾驭 AI 开发" = [
+    { "01-背景与数据" = "01-背景与数据.md" },
+    { "02-agent-notes" = "02-agent-notes.md" },
+    { "03-机器门禁" = "03-机器门禁.md" },
+    { "04-skills蒸馏" = "04-skills蒸馏.md" },
+    { "05-事实供给" = "05-事实供给.md" },
+    { "06-测试哲学" = "06-测试哲学.md" },
+    { "07-可借鉴清单" = "07-可借鉴清单.md" },
+    { "08-一手拆机" = "08-一手拆机.md" },
+  ] },
+  { "附件-boot-manifest-rc6" = "附件-boot-manifest-rc6.yml" },
+]
+
+# extra_css = ["stylesheets/extra.css"]
+# extra_javascript = ["javascripts/extra.js"]
+
+[project.theme]
+# variant = "classic"
+# custom_dir = "overrides"
+# favicon = "images/favicon.png"
+language = "zh"
+features = [
+  "announce.dismiss",
+  # "content.action.edit",
+  # "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  # "header.autohide",
+  # "navigation.expand",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  # "navigation.instant.progress",
+  "navigation.path",
+  # "navigation.prune",
+  "navigation.sections",
+  # "navigation.tabs",
+  # "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  # "toc.follow",
+  # "toc.integrate",
+]
+
+# logo = "assets/logo.png"
+
+# [project.theme.icon]
+# logo = "lucide/smile"
+
+# [project.theme.font]
+# text = "Inter"
+# code = "Jetbrains Mono"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+# [[project.extra.social]]
+# icon = "fontawesome/brands/github"
+# link = "https://github.com/user/repo"
+
+# [[project.extra.social]]
+# icon = "fontawesome/brands/mastodon"
+# link = "https://fosstodon.org/@user"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc = {
+  permalink = true
+}
+pymdownx.arithmatex = {
+  generic = true
+}
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.emoji = {
+  emoji_generator = "zensical.extensions.emoji.to_svg",
+  emoji_index = "zensical.extensions.emoji.twemoji",
+}
+pymdownx.highlight = {
+  anchor_linenums = true,
+  line_spans = "__span",
+  pygments_lang_class = true,
+}
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.magiclink = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+# pymdownx.snippets = {
+#   base_path = "includes",
+# }
+pymdownx.superfences = {
+  custom_fences = [
+    {
+      name = "mermaid",
+      class = "mermaid",
+      format = "pymdownx.superfences.fence_code_format",
+    },
+  ],
+}
+pymdownx.tabbed = {
+  alternate_style = true,
+  combine_header_slug = true
+}
+pymdownx.tasklist = {
+  custom_checkbox = true
+}
+pymdownx.tilde = {}
