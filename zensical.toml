@@ -1,5 +1,5 @@
 [project]
-# site_url = "https://www.example.com/"
+site_url = "https://cy-christin.github.io/learn-ai-dev-from-deepseek/"
 site_name = "跟着 DeepSeek 学习驾驭 AI 开发"
 site_description = "拆解 DeepSeek 用 AI 开发代码库的方法论：管两端、放中间，从真实事故蒸馏出可借鉴的 AI 协作开发实践。"
 # site_author = "Your name"
@@ -11,18 +11,17 @@ repo_name = "CY-Christin/learn-ai-dev-from-deepseek"
 # edit_uri = "edit/main/docs/"
 
 nav = [
-  { "首页" = "README.md" },
-  { "跟着 DeepSeek 学习驾驭 AI 开发" = [
-    { "01-背景与数据" = "01-背景与数据.md" },
-    { "02-agent-notes" = "02-agent-notes.md" },
-    { "03-机器门禁" = "03-机器门禁.md" },
-    { "04-skills蒸馏" = "04-skills蒸馏.md" },
-    { "05-事实供给" = "05-事实供给.md" },
-    { "06-测试哲学" = "06-测试哲学.md" },
-    { "07-可借鉴清单" = "07-可借鉴清单.md" },
-    { "08-一手拆机" = "08-一手拆机.md" },
+  { "首页" = "index.md" },
+  { "正文" = [
+    { "01 · 这个仓库有多不寻常" = "01-背景与数据.md" },
+    { "02 · Agent Notes" = "02-agent-notes.md" },
+    { "03 · 机器门禁" = "03-机器门禁.md" },
+    { "04 · Skills 蒸馏" = "04-skills蒸馏.md" },
+    { "05 · 喂事实，不喂叮嘱" = "05-事实供给.md" },
+    { "06 · 测试：防止 AI 骗你" = "06-测试哲学.md" },
+    { "07 · 可以直接抄走的清单" = "07-可借鉴清单.md" },
+    { "08 · 一手拆机" = "08-一手拆机.md" },
   ] },
-  { "附件-boot-manifest-rc6" = "附件-boot-manifest-rc6.yml" },
 ]
 
 # extra_css = ["stylesheets/extra.css"]

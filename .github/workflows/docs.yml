@@ -4,10 +4,15 @@ on:
     branches:
       - master
       - main
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
+# 同一时刻只允许一个部署，且不打断进行中的部署
+concurrency:
+  group: pages
+  cancel-in-progress: false
 jobs:
   deploy:
     environment:
@@ -15,12 +20,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/configure-pages@v6
       - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
       - uses: actions/setup-python@v7
         with:
           python-version: 3.x
-      - run: pip install zensical
+      # zensical 仍在 0.0.x，锁小版本区间，避免上游 breaking release 打挂构建
+      - run: pip install "zensical~=0.0.55"
       - run: zensical build --clean
       - uses: actions/upload-pages-artifact@v5
         with:
