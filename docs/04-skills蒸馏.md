@@ -1,6 +1,6 @@
 # 04 · Skills：把经验蒸馏成手册
 
-`.agents/skills/` 下有 11 个技能，每个是一份 900–2,000 词的 markdown 手册，agent 干特定活时按需加载——不进默认上下文，不是常驻的长 prompt。
+`.agents/skills/` 下有 11 个技能，每个是一份 900–2,000 词的 markdown 手册，agent 干特定活时按需加载——不进默认上下文，不是常驻的长 prompt。（三周后仍是 11 个，但换了两个：两个文档技能合并为 dsh-doc，新增 dsh-ci-test-reliability；带 references/ 子目录的技能从两个变成四个。缘由见[第 09 章](09-规则的改写.md)。）
 
 ## 完整清单（按诞生日期）
 
@@ -22,9 +22,9 @@
 
 **1. 没有一个 skill 是预先设计的。** 诞生顺序讲了一个故事：第 3 天出 code-review（先解决"AI 产出谁来把关"），第 10 天出 find-simplifications（AI 高产必然过度生产，要配套删减能力），最后 8 月 9 日的 trim-cot-leakage 的 commit 消息原话是 "distill the CoT-leakage purge into dsh-trim-cot-leakage"——把一次大扫除的经验蒸馏成技能。**全部是问题出现之后的沉淀。**
 
-**2. skill 是持续重构的对象，不是写完即止。** skills 目录共 137 次提交；单看 code-review 一篇，两个月修订 25+ 次，每次对应真实的 review 经验（"distill adopted review feedback"、"codify semantic review rules"）。仓库改名、目录重组时，skill 里的引用同一批提交跟着改。
+**2. skill 是持续重构的对象，不是写完即止。** skills 目录共 137 次提交（含 merge；不含为 106）；单看 code-review 一篇，两个月修订 25+ 次，每次对应真实的 review 经验（"distill adopted review feedback"、"codify semantic review rules"）。仓库改名、目录重组时，skill 里的引用同一批提交跟着改。
 
-**3. 每篇都写着同一句免责声明**：这是指导不是清单/脚本，跟着代码走，保持判断力。他们明确防的就是 agent 把手册当脚本机械执行。
+**3. 多数编辑和审查类技能都写着同一句免责声明**：这是指导不是清单/脚本，跟着代码走，保持判断力。他们明确防的就是 agent 把手册当脚本机械执行。（快照时 11 篇里 6 篇明写这句；流程类的 pre-push-checks、merging-stacked-prs、record-browser-gif 没有，它们反而更接近步骤清单。三周后只剩 5 篇：新的 ci-test-reliability 没有，合并后的 dsh-doc 把原 doc-standards 里的那句丢掉了。本书初稿写成"每篇都有"，是错的。）
 
 ## 两个值得细看的样本
 
@@ -51,6 +51,8 @@
 5. 安全细节：review 内容用 128 位 nonce 包在 untrusted 标签里防 prompt 注入，子进程环境变量全部洗掉
 
 验收标准里有真实运行记录：扫 62 个 PR、426 条人类反馈、产出 0 个候选——**0 也如实写进文档**，包括一次 adapter 幻觉 ID 被 fail-closed 兜住的细节。
+
+截至 2026-09-04 这条流水线仍停在 proposed，见第 09 章。
 
 还有一个反直觉的决定：这个工具本身**不入仓库**——单人维护的小工具过全套门禁不划算，于是协议入仓、实现私有，连豁免理由和"交接时如何请回来"都留了案。**每条重规则都要过成本收益关，过不了就明着豁免**——这比规则本身更能说明他们的方法论是活的。
 
